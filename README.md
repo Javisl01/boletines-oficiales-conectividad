@@ -13,3 +13,16 @@ Su resultado sólo demuestra conectividad. Haría falta comprobar índices, docu
 Esta es una prueba puntual de desarrollo para diagnosticar una integración HTTP. No es un colector de producción ni un respaldo automático de la ingesta. No tiene programación periódica y no envía documentos a otro sistema.
 
 Referencia: https://docs.github.com/en/site-policy/github-terms/github-terms-for-additional-products-and-features#actions
+
+## Resultado de la única ejecución
+
+[Ejecución 39952724356](https://github.com/Javisl01/boletines-oficiales-conectividad/actions/runs/39952724356), 23/10/2026, commit `5ac19cded1194bbf477d64288d7a97cc29844836`, runner estándar `ubuntu-24.04` en Azure `centralus`.
+
+| Consulta | Resultado |
+| --- | --- |
+| Índice Málaga 22/10 | HTTP 200, 50.980 bytes, enlaces a edictos presentes |
+| Índice Cuenca 22/10 | HTTP 403, cuerpo vacío |
+| Índice Burgos 22/10 | Error de conexión tras 20,3 segundos |
+| PDF Burgos 20/10 | Error de conexión tras 20,3 segundos; no se comprobó la huella esperada |
+
+El workflow terminó correctamente como diagnóstico, pero tres de las cuatro consultas no recuperaron la fuente. No demuestra un respaldo utilizable de ingesta. No se programan nuevas ejecuciones.
